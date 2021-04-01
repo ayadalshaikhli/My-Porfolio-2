@@ -4,9 +4,144 @@
   --lightblue: #92cccd;
   --gray-bg: #31343d;
   --blue-text: #445876;
+  --font-bg: 3rem;
+  --font-mid: 2rem;
+  --font-sml: 1rem;
 }
 
 body {
   font-family: var(--font-family);
   line-height: 1.5;
+  animation: transitionIn 0.75s;
+}
+
+/* Header + NAV-BAR */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1%;
+  font-size: var(--font-bg);
+  background-color: var(--gray-bg);
+}
+
+.header h1 {
+  color: var(--gray-bg);
+  background-color: var(--lightblue);
+  padding: 5px 5px 5px 200px;
+  border-radius: 4px;
+  animation: size 2s ease-in-out 0s normal;
+  z-index: 1;
+}
+
+nav {
+  display: flex;
+  color: var(--lightblue);
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+}
+
+nav a {
+  font-size: var(--font-sml);
+  padding: 12px;
+  text-decoration: none;
+  color: var(--lightblue);
+  border-bottom: 4px solid var(--lightblue);
+  margin-right: 20px;
+  border-radius: 25px;
+  transition: all 0.4s;
+}
+
+nav a:hover {
+  border: 4px solid #fff;
+  color: #fff;
+  font-size: var(--font-mid);
+}
+
+/* Figure Main Page Picture */
+
+.figure {
+  position: relative;
+}
+
+.main-picture img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.figure .box {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 200px;
+  margin-top: 300px;
+  padding: 2%;
+  background-color: var(--lightblue);
+  font-size: var(--font-mid);
+  color: var(--gray-bg);
+  border-radius: 50px;
+  animation: box 2s ease-in-out 0s normal;
+  z-index: 2;
+}
+
+.box h1 {
+  font-size: var(--font-bg);
+}
+
+/* Section MAIN */
+
+.main {
+  display: flex;
+}
+
+/* TransitionIn Animation Hole page*/
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+
+/* HEADING SIZE ANIMATION */
+@keyframes size {
+  from {
+    padding: 5px 5px 5px 5px;
+    border-radius: 4px;
+    background-color: var(--gray-bg);
+    color: var(--lightblue);
+  }
+  to {
+    padding: 5px 5px 5px 200px;
+    border-radius: 4px;
+  }
+}
+
+/* BOX ANIMATION  */
+@keyframes box {
+  from {
+    border-radius: 0;
+    padding: 0;
+    color: #fff;
+    background-color: var(--gray-bg);
+  }
+  to {
+    margin-left: 200px;
+    margin-top: 300px;
+    padding: 2%;
+    border-radius: 50px;
+  }
 }

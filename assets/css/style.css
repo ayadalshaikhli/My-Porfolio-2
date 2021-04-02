@@ -4,9 +4,9 @@
   --lightblue: #92cccd;
   --gray-bg: #31343d;
   --blue-text: #445876;
-  --font-bg: 3rem;
-  --font-mid: 2rem;
-  --font-sml: 1rem;
+  --font-bg: 3em;
+  --font-mid: 2em;
+  --font-sml: 1em;
 }
 
 body {
@@ -15,17 +15,25 @@ body {
   animation: transitionIn 0.75s;
 }
 
-/* Header + NAV-BAR */
+a {
+  text-decoration: none;
+  color: var(--blue-text);
+}
+/* =====================================
+       Header + NAV-BAR 
+=======================================*/
+
 .header {
   display: flex;
   justify-content: space-between;
   padding: 1%;
-  font-size: var(--font-bg);
+  font-size: var(--font-mid);
   background-color: var(--gray-bg);
 }
 
 .header h1 {
   color: var(--gray-bg);
+  font-size: var(--font-md);
   background-color: var(--lightblue);
   padding: 5px 5px 5px 200px;
   border-radius: 4px;
@@ -46,7 +54,7 @@ nav ul {
 nav a {
   font-size: var(--font-sml);
   padding: 12px;
-  text-decoration: none;
+
   color: var(--lightblue);
   border-bottom: 4px solid var(--lightblue);
   margin-right: 20px;
@@ -60,27 +68,29 @@ nav a:hover {
   font-size: var(--font-mid);
 }
 
-/* Figure Main Page Picture */
+/* =====================================
+       Figure Main Page Picture
+=======================================*/
+
+.figure {
+  display: flex;
+}
+
+.main-picture img {
+  display: flex;
+  align-items: flex-start;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+}
 
 .figure {
   position: relative;
 }
 
-.main-picture img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-}
-
 .figure .box {
   position: absolute;
-  display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-left: 200px;
@@ -98,13 +108,251 @@ nav a:hover {
   font-size: var(--font-bg);
 }
 
-/* Section MAIN */
+/* =====================================
+       Global Items
+=======================================*/
 
-.main {
-  display: flex;
+main {
+  height: 100vh;
+  padding: 50px 200px 50px 200px;
 }
 
-/* TransitionIn Animation Hole page*/
+main h1 {
+  font-size: var(--font-bg);
+  color: var(--blue-text);
+}
+
+.title {
+  display: flex;
+  text-align: right;
+  padding-right: 20px;
+  border-right: 4px solid var(--blue-text);
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  padding-top: 50px;
+}
+
+/* ===============
+      About 
+==================*/
+
+.about .paragraph-text {
+  padding-left: 20px;
+  line-height: 2.5rem;
+  color: var(--blue-text);
+}
+
+/* ===============
+      Work
+==================*/
+
+.work .title h1 {
+  padding-left: 86px;
+}
+
+/* =========
+     First Picture
+==========*/
+
+.first-picture {
+  position: relative;
+
+  width: 1100px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 100px;
+  padding-top: 10px;
+}
+
+.first-picture .big-picture {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  overflow: hidden;
+  transition: 0.5s;
+  border: 4px solid var(--lightblue);
+}
+
+.first-picture .big-picture:hover {
+  z-index: 1;
+  transform: scale(1.05);
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5);
+}
+
+.first-picture .big-picture .imgBx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.first-picture .big-picture .imgBx::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: #92cccda9;
+  mix-blend-mode: multiply;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.first-picture .big-picture:hover .imgBx::before {
+  opacity: 0;
+}
+
+.first-picture .big-picture .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.first-picture .big-picture .picture-box {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background: var(--lightblue);
+  top: 0;
+  left: 0;
+  margin-top: 300px;
+  width: 200px;
+  height: 100px;
+  z-index: 1;
+  padding: 20px;
+  color: var(--gray-bg);
+}
+
+.picture-box h4 {
+  font-size: 1.5em;
+}
+
+/* =========
+     Secound Picture
+==========*/
+.secound-picture {
+  position: relative;
+  width: 1100px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding-left: 100px;
+  padding-top: 10px;
+}
+
+.secound-picture .small-pictures {
+  position: relative;
+  width: 390px;
+  height: 100px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  transition: 0.5s;
+  border: 4px solid var(--lightblue);
+}
+
+.secound-picture .small-pictures:hover {
+  z-index: 1;
+  transform: scale(1.05);
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5);
+}
+
+.secound-picture .small-pictures .imgSx::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: #92cccda9;
+  mix-blend-mode: multiply;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.secound-picture .small-pictures:hover .imgSx::before {
+  opacity: 0;
+}
+
+.secound-picture .small-pictures .imgSx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.secound-picture .small-pictures .picture-box {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background: var(--lightblue);
+  top: 0;
+  left: 0;
+  margin-top: 20px;
+  z-index: 1;
+  padding: 2px;
+  color: var(--gray-bg);
+}
+
+/* ===============
+      Contact
+==================*/
+.contact .title h1 {
+  padding-left: 28px;
+}
+
+.contact-info {
+  display: flex;
+  font-size: var(--font-mid);
+}
+.contact-info ul {
+  display: flex;
+  flex-direction: row;
+}
+.contact-info li {
+  padding: 20px;
+}
+
+.contact-info a {
+  border-bottom: 2px solid var(--lightblue);
+  border-radius: 5px;
+}
+
+.contact-info a:hover {
+  z-index: 2;
+  transform: scale(1.05);
+}
+
+/* ===============
+      Resume
+==================*/
+.resume {
+  width: 100%;
+  height: 20vh;
+}
+
+/* =====================================
+      KEY FRAMES SECTION
+=======================================*/
+
+/* =====================================
+      TransitionIn Animation Hole page
+=======================================*/
+
 @keyframes transitionIn {
   from {
     opacity: 0;
@@ -116,7 +364,10 @@ nav a:hover {
   }
 }
 
-/* HEADING SIZE ANIMATION */
+/* =====================================
+      HEADING SIZE ANIMATION
+=======================================*/
+
 @keyframes size {
   from {
     padding: 5px 5px 5px 5px;
@@ -130,11 +381,15 @@ nav a:hover {
   }
 }
 
-/* BOX ANIMATION  */
+/* =====================================
+        BOX ANIMATION  
+=======================================*/
+
 @keyframes box {
   from {
     border-radius: 0;
     padding: 0;
+    margin-top: 0;
     color: #fff;
     background-color: var(--gray-bg);
   }

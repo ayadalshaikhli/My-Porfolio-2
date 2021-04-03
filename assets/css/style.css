@@ -54,7 +54,6 @@ nav ul {
 nav a {
   font-size: var(--font-sml);
   padding: 12px;
-
   color: var(--lightblue);
   border-bottom: 4px solid var(--lightblue);
   margin-right: 20px;
@@ -90,18 +89,32 @@ nav a:hover {
 }
 
 .figure .box {
-  position: absolute;
+  /* position: absolute;
   flex-direction: column;
   align-items: flex-start;
   margin-left: 200px;
   margin-top: 300px;
+  width: 100%;
   padding: 2%;
-  background-color: var(--lightblue);
-  font-size: var(--font-mid);
-  color: var(--gray-bg);
+  
   border-radius: 50px;
+  z-index: 2; */
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--lightblue);
+  font-size: var(--font-sml);
+  color: var(--gray-bg);
+  top: 0;
+  left: 0;
+  margin-top: 300px;
+  width: 400px;
+  height: 150px;
+  margin-left: 200px;
+  border-radius: 50px;
+  z-index: 1;
+  padding: 1%;
   animation: box 2s ease-in-out 0s normal;
-  z-index: 2;
 }
 
 .box h1 {
@@ -144,6 +157,9 @@ main h1 {
   line-height: 2.5rem;
   color: var(--blue-text);
 }
+.about h1 {
+  padding-right: 13px;
+}
 
 /* ===============
       Work
@@ -159,7 +175,6 @@ main h1 {
 
 .first-picture {
   position: relative;
-
   width: 1100px;
   display: flex;
   flex-wrap: wrap;
@@ -207,6 +222,7 @@ main h1 {
 
 .first-picture .big-picture:hover .imgBx::before {
   opacity: 0;
+  z-index: 0;
 }
 
 .first-picture .big-picture .imgBx img {
@@ -233,7 +249,7 @@ main h1 {
   color: var(--gray-bg);
 }
 
-.picture-box h4 {
+.picture-box h1 {
   font-size: 1.5em;
 }
 
@@ -275,7 +291,7 @@ main h1 {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 0;
   background: #92cccda9;
   mix-blend-mode: multiply;
   opacity: 1;
@@ -284,6 +300,7 @@ main h1 {
 
 .secound-picture .small-pictures:hover .imgSx::before {
   opacity: 0;
+  z-index: 0;
 }
 
 .secound-picture .small-pictures .imgSx {
@@ -342,7 +359,27 @@ main h1 {
 ==================*/
 .resume {
   width: 100%;
+  display: flex;
+  align-items: center;
   height: 20vh;
+  padding-left: 20px;
+}
+
+.download {
+  margin-left: 150px;
+  font-size: var(--font-bg);
+}
+
+.download button {
+  border-radius: 50px;
+  padding: 5%;
+  background: var(--lightblue);
+}
+
+.download button:hover {
+  background: var(--gray-bg);
+  color: var(--lightblue);
+  transform: scale(1.05);
 }
 
 /* =====================================
@@ -396,7 +433,121 @@ main h1 {
   to {
     margin-left: 200px;
     margin-top: 300px;
-    padding: 2%;
+    width: 400px;
+    height: 150px;
     border-radius: 50px;
+  }
+}
+
+/* =====================================
+        Tablet Screen
+=======================================*/
+
+@media (max-width: 760px) {
+  body {
+    margin: 0 auto;
+  }
+  .header {
+    flex-flow: wrap column;
+    align-items: center;
+    transform: none;
+  }
+
+  .header a {
+    border: none;
+    transition: none;
+  }
+
+  .header a:hover {
+    border: none;
+    transform: none;
+  }
+  /* ===============
+      Picture
+==================*/
+  .figure {
+    flex-direction: column;
+  }
+  .figure .box {
+    flex-flow: wrap column;
+    width: 100%;
+    height: 100%;
+    animation: none;
+    font-size: var(--font-sml);
+    margin: 270px 10px 10px 10px;
+    padding: 2%;
+  }
+  /* ===============
+      Content
+==================*/
+  .main {
+    flex-flow: column wrap;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+
+  .main .flex-row {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    border-bottom: 4px solid var(--blue-text);
+  }
+  .main .title {
+    border: none;
+    text-align: center;
+    border-bottom: 4px solid var(--blue-text);
+  }
+  .main .margin-top {
+    margin-top: 250px;
+  }
+}
+
+/* =====================================
+        Mobile Screen
+=======================================*/
+
+@media (max-width: 500px) {
+  .navbar ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .figure .main-picture {
+    flex-direction: column;
+  }
+
+  .main-picture .box {
+    margin-top: 12rem;
+  }
+
+  .all-pictures {
+    width: 432px;
+  }
+
+  .first-picture {
+    width: 432px;
+    padding-left: 0;
+  }
+
+  .secound-picture {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+    width: 432px;
+    margin-top: 20px;
+  }
+  .secound-picture .small-pictures {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .contact-info ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .download {
+    margin-left: 35px;
   }
 }

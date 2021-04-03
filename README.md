@@ -13,4 +13,4 @@
 ---
 
 [![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)
-https://ayadalshaikhli.github.io/My-Portfolio/ -[installation](#installation)
+https://ayadalshaikhli.github.io/My-Portfolio/

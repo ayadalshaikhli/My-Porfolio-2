@@ -8,7 +8,7 @@
 
 ---
 
-![alt text](https://imgur.com/gallery/4MWwMoo" Website Screenshot")
+![alt text]("https://imgur.com/gallery/4MWwMoo" Website Screenshot")
 
 ---
 

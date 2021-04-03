@@ -4,7 +4,7 @@
 
 # My-Porfolio
 
-#### This is my portfolio and my first work. I learned how to add animations and transitions to the website, how to use flex-box and z-index. I learned how to organize my CSS and HTML and add a comment to make reading the website easier
+#### This is my portfolio and my first work. I learned how to add animations and transitions to the website, how to use flex-box and z-index. I learned how to organize my CSS and HTML and add comments to make reading websites easier
 
 ---
 

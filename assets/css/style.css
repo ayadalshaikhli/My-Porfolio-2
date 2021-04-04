@@ -1,12 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
 :root {
+  /* Fonts */
   --font-family: "Roboto", sans-serif;
+
+  /* Colors */
   --lightblue: #92cccd;
   --gray-bg: #31343d;
   --blue-text: #445876;
+
+  /* Font Sizes */
   --font-bg: 3em;
   --font-mid: 2em;
   --font-sml: 1em;
+
+  /* Max width and height */
+  --max-width: 100%;
+  --max-height: 100%;
 }
 
 body {
@@ -19,9 +28,14 @@ a {
   text-decoration: none;
   color: var(--blue-text);
 }
+
 /* =====================================
        Header + NAV-BAR 
 =======================================*/
+
+/* =========
+    Header
+==========*/
 
 .header {
   display: flex;
@@ -40,6 +54,10 @@ a {
   animation: size 2s ease-in-out 0s normal;
   z-index: 1;
 }
+
+/* =========
+    Nav Bar
+==========*/
 
 nav {
   display: flex;
@@ -68,7 +86,7 @@ nav a:hover {
 }
 
 /* =====================================
-       Figure Main Page Picture
+       Main Page Picture
 =======================================*/
 
 .figure {
@@ -81,7 +99,7 @@ nav a:hover {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100%;
+  width: var(--max-width);
 }
 
 .figure {
@@ -112,7 +130,7 @@ nav a:hover {
 }
 
 /* =====================================
-       Global Items
+            Global In Main
 =======================================*/
 
 main {
@@ -138,22 +156,22 @@ main h1 {
   padding-top: 50px;
 }
 
-/* ===============
-      About 
-==================*/
+/* =====================================
+       About Section
+=======================================*/
 
 .about .paragraph-text {
-  padding-left: 20px;
+  padding-left: 30px;
   line-height: 2.5rem;
   color: var(--blue-text);
 }
 .about h1 {
-  padding-right: 13px;
+  padding-left: 67px;
 }
 
-/* ===============
-      Work
-==================*/
+/* =====================================
+       Work Section
+=======================================*/
 
 .work .title h1 {
   padding-left: 86px;
@@ -191,8 +209,8 @@ main h1 {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: var(--max-width);
+  height: var(--max-height);
   object-fit: cover;
 }
 
@@ -201,8 +219,8 @@ main h1 {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: var(--max-width);
+  height: var(--max-height);
   z-index: 1;
   background: #92cccda9;
   mix-blend-mode: multiply;
@@ -219,10 +237,12 @@ main h1 {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: var(--max-width);
+  height: var(--max-height);
   object-fit: cover;
 }
+
+/* ===== Picture Box ===== */
 
 .first-picture .big-picture .picture-box {
   position: absolute;
@@ -246,6 +266,7 @@ main h1 {
 /* =========
      Secound Picture
 ==========*/
+
 .secound-picture {
   position: relative;
   width: 1100px;
@@ -279,8 +300,8 @@ main h1 {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: var(--max-width);
+  height: var(--max-height);
   z-index: 0;
   background: #92cccda9;
   mix-blend-mode: multiply;
@@ -297,10 +318,12 @@ main h1 {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: var(--max-width);
+  height: var(--max-height);
   object-fit: cover;
 }
+
+/* ===== Picture Box ===== */
 
 .secound-picture .small-pictures .picture-box {
   position: absolute;
@@ -315,9 +338,10 @@ main h1 {
   color: var(--gray-bg);
 }
 
-/* ===============
-      Contact
-==================*/
+/* =====================================
+       Contact Section 
+=======================================*/
+
 .contact .title h1 {
   padding-left: 28px;
 }
@@ -344,11 +368,11 @@ main h1 {
   transform: scale(1.05);
 }
 
-/* ===============
-      Resume
-==================*/
+/* =====================================
+       Resume Section
+=======================================*/
 .resume {
-  width: 100%;
+  width: var(--max-width);
   display: flex;
   align-items: center;
   height: 20vh;
@@ -356,7 +380,7 @@ main h1 {
 }
 
 .download {
-  margin-left: 150px;
+  margin-left: 300px;
   font-size: var(--font-bg);
 }
 
@@ -364,21 +388,27 @@ main h1 {
   border-radius: 50px;
   padding: 5%;
   background: var(--lightblue);
+  border: none;
+  transition: all 0.2s;
 }
 
 .download button:hover {
   background: var(--gray-bg);
-  color: var(--lightblue);
   transform: scale(1.05);
+  transform: rotate3d(100deg);
+}
+
+.download button a:hover {
+  color: #fff;
 }
 
 /* =====================================
       KEY FRAMES SECTION
 =======================================*/
 
-/* =====================================
-      TransitionIn Animation Hole page
-=======================================*/
+/* =========
+     TransitionIn Animation Page Load
+==========*/
 
 @keyframes transitionIn {
   from {
@@ -391,9 +421,9 @@ main h1 {
   }
 }
 
-/* =====================================
-      HEADING SIZE ANIMATION
-=======================================*/
+/* =========
+     Heading Size Animation
+==========*/
 
 @keyframes size {
   from {
@@ -408,9 +438,9 @@ main h1 {
   }
 }
 
-/* =====================================
-        BOX ANIMATION  
-=======================================*/
+/* =========
+     Box Animation
+==========*/
 
 @keyframes box {
   from {
@@ -452,28 +482,32 @@ main h1 {
     border: none;
     transform: none;
   }
+
   /* ===============
-      Picture
+      Work Section
 ==================*/
+
   .figure {
     flex-direction: column;
   }
   .figure .box {
     flex-flow: wrap column;
-    width: 100%;
-    height: 100%;
+    width: var(--max-width);
+    height: var(--max-height);
     animation: none;
     font-size: var(--font-sml);
     margin: 270px 10px 10px 10px;
     padding: 2%;
   }
+
   /* ===============
-      Content
+      Content Section
 ==================*/
+
   .main {
     flex-flow: column wrap;
-    width: 100%;
-    height: 100%;
+    width: var(--max-width);
+    height: var(--max-height);
     padding: 0;
   }
 
@@ -498,11 +532,19 @@ main h1 {
 =======================================*/
 
 @media (max-width: 500px) {
+  /* ===============
+      Nav Bar
+  ==================*/
+
   .navbar ul {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
+  /* ===============
+      Work Section
+  ==================*/
 
   .figure .main-picture {
     flex-direction: column;
@@ -532,6 +574,11 @@ main h1 {
     margin-top: 20px;
     margin-bottom: 20px;
   }
+
+  /* ===============
+      Content Section
+  ==================*/
+
   .contact-info ul {
     flex-direction: column;
     align-items: center;
